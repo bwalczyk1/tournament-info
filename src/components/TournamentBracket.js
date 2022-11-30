@@ -4,7 +4,7 @@ export default class TournamentBracket extends Component {
     render() {
         if(this.props.data != null && this.props.data.matches != null)
             return (
-                <div style={{display: "flex", flexDirection: "row", width: "100%", height: "100%"}}>
+                <div style={{display: "flex", flexDirection: "row", height: "100%"}}>
                     {this.props.data.matches.map((matchesOfRound, round) => (
                         <div style={{display: "flex", flexDirection: "column", justifyContent: "space-around", minWidth: "150px" }} key={round}>
                             {matchesOfRound.map((match) => 

@@ -34,7 +34,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div style={{display: "flex", flexDirection: "row"}}>
+      <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
         <TournamentBracket 
           data={ this.state.data } 
           selectPlayer={ this.selectPlayer } 

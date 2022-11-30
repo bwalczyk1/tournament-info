@@ -15,7 +15,7 @@ export default class ScoresTable extends Component {
                 <table style={{margin: "10px", borderCollapse: "collapse", width: "300px"}}>
                     <tbody>
                         { playerArrays.map((playerArray) => (
-                            <tr style={{color: playerArray[1] < this.props.data.matches.length - 1 ? "#C5C6D0" : "black", border: "2px solid black", padding: "10px"}}  
+                            <tr style={{color: (this.props.data.matches !== undefined && playerArray[1] < this.props.data.matches.length - 1) ? "#C5C6D0" : "black", border: "2px solid black", padding: "10px"}}  
                                 onClick={()=>this.props.selectPlayer(playerArray[0])} key={playerArray[0]}>
                                 <td>{ playerArray[0] }</td>
                                 <td>{ playerArray[1] }</td>
