@@ -12,7 +12,7 @@ export default class ScoresTable extends Component {
                 return b[1] - a[1]
             })
             return (
-                <table style={{margin: "10px", borderCollapse: "collapse", width: "300px"}}>
+                <table style={{borderCollapse: "collapse", width: "100%", border: "5px solid black"}}>
                     <tbody>
                         { playerArrays.map((playerArray) => (
                             <tr style={{color: (this.props.data.matches !== undefined && playerArray[1] < this.props.data.matches.length - 1) ? "#C5C6D0" : "black", border: "2px solid black", padding: "10px"}}  
@@ -26,7 +26,7 @@ export default class ScoresTable extends Component {
             )
         }
         return (
-            <div>No players added yet</div>
+            <div style={{textAlign: "right"}}>No players added yet</div>
         )
     }
 }

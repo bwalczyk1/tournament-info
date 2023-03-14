@@ -20,10 +20,10 @@ export default class App extends Component {
       const dbRef = ref(database)
       onValue(dbRef, (snapshot) => {
           let data = snapshot.val()
-          console.log(data)
-          this.setState({
-            data: data
-          })
+          let newData = {data: data}
+          if(data != null && data.players !== null && !Object.keys(data.players).includes(this.state.selectedPlayer))
+            newData.selectedPlayer = ""
+          this.setState(newData)
       })
 
   }
@@ -39,7 +39,7 @@ export default class App extends Component {
           data={ this.state.data } 
           selectPlayer={ this.selectPlayer } 
         />
-        <div style={{margin: "30px", height: "90%", width: "450px", border: "5px solid black"}}>
+        <div style={{margin: "30px", height: "90%", width: "450px"}}>
           { 
             this.state.selectedPlayer === "" ? (
               <ScoresTable 

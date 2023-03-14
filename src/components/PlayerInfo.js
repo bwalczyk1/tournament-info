@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import personImg from "../assets/person.jpg"
+import redCrossImg from "../assets/red-cross.png"
 
 export default class PlayerInfo extends Component {
   render() {
@@ -19,14 +20,15 @@ export default class PlayerInfo extends Component {
     }
     console.log(opponents)
     return (
-      <div style={{display: "flex", flexDirection: "column", width: "100%"}}>
+      <div style={{display: "flex", flexDirection: "column", width: "100%", border: "5px solid black"}}>
         <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
-            <img src={personImg} alt='person' style={{height: "100px", width: "100px"}}/>
-            <div style={{fontSize: "22px", textAlign: "right"}}>
+            <img src={personImg} alt='' style={{height: "100px", width: "100px"}}/>
+            <div style={{fontSize: "22px", textAlign: "center", alignSelf: 'center', maxWidth: "50%"}}>
                 <b>{ selectedPlayer }</b>
                 <br/>
-                { this.props.data.players[selectedPlayer] }
+                Score: { this.props.data.players[selectedPlayer] }
             </div>
+            <img src={redCrossImg} alt="[X]" style={{height: "30px", alignSelf: "flex-start", margin: "5px"}} onClick={()=>this.props.selectPlayer("")}/>
         </div>
         <ul>
             {opponents.map((opponent) => (
