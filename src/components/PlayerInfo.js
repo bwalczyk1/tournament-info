@@ -6,6 +6,7 @@ export default class PlayerInfo extends Component {
   render() {
     let selectedPlayer = this.props.selectedPlayer
     let opponents = []
+
     for(let round of this.props.data.matches){
         for(let match of round){
             let matchPlayers = match.split('-')
@@ -18,7 +19,7 @@ export default class PlayerInfo extends Component {
             }
         }
     }
-    console.log(opponents)
+
     return (
       <div style={{display: "flex", flexDirection: "column", width: "100%", border: "5px solid black"}}>
         <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
