@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import firebaseConfig from './firebase-config'
+import { firebaseConfig } from './firebase-config'
 import { initializeApp } from "firebase/app"
 import { getDatabase, ref, onValue } from "firebase/database"
 import TournamentBracket from './components/TournamentBracket';
